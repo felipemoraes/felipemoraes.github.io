@@ -1,9 +1,9 @@
 ---
 published: true
 layout: post
-title: Relevance Feedback on Your Web modern stack
+title: Relevance Feedback on Your Modern Web Stack
 ---
-## Relevance Feedback on Your Web modern stack
+## Relevance Feedback on Your Modern Web Stack
 
 Relevance feedback is a solid chapter of information retrieval research with many open-sourced implemantion such as [Indri](https://www.lemurproject.org/indri.php), [Anserini](https://github.com/castorini/Anserini) and [Terrier](http://terrier.org/). Together with my PhD supervisor, Claudia Hauff, we wrote a paper about bringing Indri to the modern Web stack and it was recently published as a demo at ECIR 2019. 
 
