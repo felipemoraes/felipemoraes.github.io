@@ -5,8 +5,50 @@ layout: default
 <div class="article">
     <div class="well">
         <h1>What's News</h1>
+            <ul>
+                <li>01/2019 - Kilian Grashoff, MSc student I supervised defended his thesis.</li>
+                <li>01/2019 - Published Information Retrieval journal "On the Impact of Group Size on Collaborative Search Effectiveness" </li>
+                <li>01/2019 - I'm now bartending at DWH/Outsite on Thursdays. </li>
+                <li>12/2018 - Full paper "An Axiomatic Approach to Diagnosing Neural IR Models" accepted at ECIR 2019</li>
+                <li>12/2018 - Demo paper "node-indri: moving the Indri toolkit to the modern Web stack" accepted at ECIR 2019</li>
+                <li>10/2018 - I won the best reviewer award at RecSys 2018. </li>
+                <li>08/2018 - My first MSc student, Sindunuraga Rikarno Putra, defended his thesis with cum-laude. </li>
+                <li>08/2018 - Full paper "Contrasting search as a learning activity with instructor-designed learning" accepted at CIKM 2018</li>
+            </ul>
         </div>
     </div>
+</div>
+
+{% for post in paginator.posts %}
+<div class="article">
+    <div class="well">
+        <h1><a href="{{ site.baseurl}}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}</a></h1>
+        {% if site.comments and post.comments %}
+            {% if site.disqus != '' %}
+            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}/#disqus_thread" data-disqus-identifier="{{ post.url | slugify }}">Comments</a></p>
+            {% elsif site.isso != '' %}
+            <p class="author"><a href="{{ site.baseurl }}{{ post.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
+            {% endif %}
+        {% endif %}
+        <div class="content">
+            {{ post.content }}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">Newer</a>
+      {% else %}
+        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">Newer</a>
+      {% endif %}
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">Older</a>
+  {% endif %}
 </div>
 
 
