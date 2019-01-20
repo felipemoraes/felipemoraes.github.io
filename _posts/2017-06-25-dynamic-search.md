@@ -81,7 +81,7 @@ We performed two different simulations, one mishandling feedback on individual p
 
 
 :-------------------------:|:-------------------------:
-<p><img href="{{ site.baseurl}}/img/aspect_removal_DPH.png"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png"/> </p>
+<p><img href="{{ site.baseurl}}/img/aspect_removal_DPH.png" width="200"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png" width="200" /> </p>
 Inaccurate aspect modeling            |  Incomplete aspect modeling
 
 
