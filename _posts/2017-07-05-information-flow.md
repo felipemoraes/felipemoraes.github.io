@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Effectiveness of Dynamic Search Systems"
+title: "Information Flow in Dynamic Information Retrieval"
 date: 2017-07-05 16:25:06 -0700
 comments: false
 ---
