@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Effectiveness of Dynamic Search Systems"
-date: 2017-06-25 16:25:06 -0700
+title: Effectiveness of Dynamic Search Systems
+date: '2017-06-25 16:25:06 -0700'
 comments: false
+published: true
 ---
 
 Research on exploratory search has been supported by several initiatives. The **T**ext **RE**trieval **C**onference (TREC) has hosted related research tracks on [interactive](http://trec.nist.gov/data/interactive.html) search, search within [sessions](http://trec.nist.gov/data/session.html), search for [task completion](http://trec.nist.gov/data/tasks.html) and, more recently, dynamic search in specialized domains. The latter problem, embodied by the [TREC Dynamic Domain (DD)](http://trec-dd.org/) track, was the focus of my Master's thesis, supervised by [Rodrygo Santos](http://homepages.dcc.ufmg.br/~rodrygo/). As a result of this work, we got a full paper accepted at ICTIR 2017.
@@ -80,7 +81,7 @@ We performed two different simulations, one mishandling feedback on individual p
 
 
 :-------------------------:|:-------------------------:
-![Inaccurate aspect modeling ]({{ site.baseurl}}/img/aspect_removal_DPH.png)  |  ![Incomplete aspect modeling]({{ site.baseurl}}/img/miss_feedback_DPH.png) 
+<p><img href="{{ site.baseurl}}/img/aspect_removal_DPH.png"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png"/> </p>
 Inaccurate aspect modeling            |  Incomplete aspect modeling
 
 
