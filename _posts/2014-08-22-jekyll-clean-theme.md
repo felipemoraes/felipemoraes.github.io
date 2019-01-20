@@ -1,197 +1,115 @@
 ---
 layout: post
-title: "Jekyll Clean Theme"
+title: "Effectiveness of Dynamic Search Systems"
 date: 2014-08-22 16:25:06 -0700
 comments: false
 ---
 
-* Get it from [github](https://github.com/scotte/jekyll-clean).
-* See the [live demo](https://scotte.github.io/jekyll-clean).
-* See it [in action on my own blog](https://scotte.org).
 
-Welcome to the sample post for the Jekyll Clean theme.
+Research on exploratory search has been supported by several initiatives. The **T**ext **RE**trieval **C**onference (TREC) has hosted related research tracks on [interactive](http://trec.nist.gov/data/interactive.html) search, search within [sessions](http://trec.nist.gov/data/session.html), search for [task completion](http://trec.nist.gov/data/tasks.html) and, more recently, dynamic search in specialized domains. The latter problem, embodied by the [TREC Dynamic Domain (DD)](http://trec-dd.org/) track, was the focus of my Master's thesis, supervised by [Rodrygo Santos](http://homepages.dcc.ufmg.br/~rodrygo/). As a result of this work, we got a full paper accepted at ICTIR 2017.
 
-A simple and clean Jekyll theme using [bootstrap](http://getbootstrap.com)
-(not to be confused with jekyll-bootstrap) that's easy to modify and very
-modular in component and element reuse.
-
-It uses Disqus for comments and includes Google Analytics support. Both of
-these features are disabled by default and can be enabled via \_config.yml. You
-can also rip this code out of the templates if you like (footer.html and post.html).
-The beauty of Jekyll - keep things clean... Jekyll Clean!
-
-The theme works well on mobile phones, using a collapsable nav bar and hiding the
-sidebar. The links pane in the sidebar is available on mobile through the nav menu,
-and you can do the same thing for any other sections added to the sidebar.
-
-Don't forget to occassionally merge against my upstream repository so you can get
-the latest changes. Pull requests are encouraged and accepted!
-
-Installation
-============
-
-If you don't have a blog already on github, start by cloning this repository.
-Best to do that directly on github and then clone that down to your computer.
-
-If you already do have a blog, You can certainly apply this theme to your existing
-blog in place, but then you won't be able to merge as the theme changes. If you
-re-apply your blog history on top of this theme's **gh-pages** branch, it's then
-easy to update to the latest version of the theme. You also don't want to have to
-deal with resolving old conflicts from your existing history, so you may wish to to
-push your existing master off to a new branch so you have the old history and start
-a new branch with this as the start, merging in your \_posts and other assets (after
-git rm'ing the current \_posts.
-
-Not ideal, but you have to make a choice - either apply it manually or base your
-blog off this theme's branch. Either way it will work, and both have their own
-pros and cons.
-
-You can setup an upstream tracking repository like so:
-
-```
-$ git remote add upstream git@github.com:scotte/jekyll-clean.git
-```
-And now when you wish to merge your own branch onto the latest version of the
-theme, simply do:
-
-```
-$ git fetch upstream
-$ git merge upstream/gh-pages
+```bibtex
+@inproceedings{moraes2017ictir-a,
+  author = {Felipe Moraes and Rodrygo L. T. Santos and Nivio Ziviani},
+  title = {On Effective Dynamic Search in Specialized Domains},
+  booktitle = {Proceedings of the 3rd ACM International Conference on the 
+    Theory of Information Retrieval},
+  year = {2017},
+  address = {Amsterdam, The Netherlands}
+}
 ```
 
-Of course you will have to resolve conflicts for \_config.yml, \_includes/links-list.html,
-and \_posts, and so on, but in practice this is pretty simple.
+The TREC DD track has been organized by [Grace Hui Yang](http://infosense.cs.georgetown.edu/grace/) and [Ian Soboroff](https://www.nist.gov/people/ian-soboroff). In this track, the main task is summarized as follows: 
 
-This is how I maintain my own blog which is based on this theme. The old history is
-sitting in an **old-master** branch that I can refer to when I need to.
-
-Running Locally
-===============
-
-Here's the exact set of packages I need to install on Debian to run jekyll
-locally with this theme for testing.
-
-```
-$ sudo aptitude install ruby ruby-dev rubygems nodejs
-$ sudo gem install jekyll jekyll-paginate
-```
-
-And then it's just a simple matter of running jekyll locally:
-
-```
-$ jekyll serve --baseurl=''
-```
-
-Now browse to http://127.0.0.1:4000
-
-Using gh-pages
-==============
-
-Running a jekyll site is a bit outside the scope of this doc, but
-sometimes it can be a bit confusing how to configure jekyll for
-project pages versus user pages, for example.
-
-To start with, read through
-[the documentation here](https://help.github.com/articles/user-organization-and-project-pages/).
-This will provide a good overview on how it all works. The git branch and
-baseurl (in _config.yml) will change depending on the sort of site deployed.
-
-When you clone this repository, it's set up for project pages, so the
-deployed branch is "gh-pages" and baseurl is configured to 'jekyll-clean',
-because that's the name of this project.
-
-If you plan to deploy this as user pages, the deployed branch is "master"
-and baseurl is configured to '' (i.e. empty).
-
-Comment Systems
-===============
-
-Jekyll clean supports both [isso](https://posativ.org/isso) and
-[disqus](https://disqus.com) comment systems.
-
-After enabling **comments**, either **isso** or **disquss** must
-be configured. Don't try configuring both!
-
-Isso Comments
-=============
-
-Isso requires running a local server, so is not suitable for hosting
-in github pages, for example. Isso is open source and keeps all your
-data local, unlike Disqus (who knows exactly what they are doing with
-your data).
-
-In _config.yml you'll need to set **isso** to the fully-qualified URL
-if your isso server (this is the value for **data-isso** passed to the
-isso JS). Make sure **comments** is true.
+_Given an initial query, a dynamic search system must improve its understanding of the user’s information need through a series of interactions. In each interaction, the user may provide the system with feedback on the relevance of specific passages of the retrieved documents with respect to one or more aspects underlying his or her information need. The system must then choose to either provide the user with further documents or end the interactive process. An effective system should be able to satisfy as many query aspects as possible (**to maximize user satisfaction**) with as few interactions as possible (**to minimize user effort**)._
 
 
-Disqus Comments
-===============
+A dynamic search system must cope with four key problems: 
 
-Getting Disqus to work can be a bit more work than it seems like it should be.
-Make sure your Disqus account is correctly configured with the right domain
-of your blog and you know your Disqus shortname.
+1. produce an initial sample of candidate documents given the user’s query and the domain of interest; 
+2. decide whether the user’s information need has been satisfied and eventually stop the interactive process; 
+3. leverage the user’s feedback to learn an improved aspect model;
+4. produce an enhanced ranking given the learned aspect model.
 
-In _config.yml you'll need to set **disqus** to your Disqus shortname and
-make sure **comments** is true.
 
-Finally, in posts, make sure you have **comments: true** in the YAML front
-matter.
+In the beginning of my Master's, we tackled this problem as a participant group of the TREC DD 2016. In total, we submitted five runs with different approaches, and in our notebook paper [UFMG at the TREC 2016 Dynamic Domain track](http://trec.nist.gov/pubs/trec25/papers/ufmg-DD.pdf), we presented results for additional unofficial runs.
 
-More information on using Disqus with Jekyll is
-[documented here](https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions).
+After our participation, we noticed that even the reportedly most effective system in each of the five domains of interest have shown only marginal improvements compared to vanilla ad-hoc search baselines, which leverage no user feedback, as shown in the plots below:
 
-Code Syntax Highlighting
-========================
+Ebola domain            |  Polar domain
+:-------------------------:|:-------------------------:
+![Ebola 2016]({{site.baseurl}}/img/TREC_Best_ebola16.png)  |  ![Polar]({{site.baseurl}}/img/TREC_Best_polar.png) 
 
-To use code syntax highlighting, use the following syntax:
+Then, our objective turned to understanding the challenges involved in building effective dynamic search systems. To this end, we isolated each of the aforementioned problems as a separate component of a dynamic search system as shown in the figure below:
 
-```
-```python
-import random
 
-# Roll the die
-roll = random.randint(1, 20)
-print('You rolled a %d.' % roll)
-``` #REMOVE
-```
+:-------------------------:|
+![Flow diagram of a typical dynamic search system ]({{site.baseurl}}/img/ds_framework.png)  |  
+Flow diagram of a typical dynamic search system            |  
 
-(Remove #REMOVE from the end of the last line). Which will look like this in
-the rendered jekyll output using the default css/syntax.css provided with this
-theme (which is the **colorful** theme from [https://github.com/iwootten/jekyll-syntax](https://github.com/iwootten/jekyll-syntax)):
+To study the impact of each of these components, we experimented with the following instantiations:
 
-```python
-import random
+- Baseline ranker: we generated a variety of candidate samples **R** by perturbing a reference ranking produced by a field-based weighting model. In particular, we use a field-based extension of [DPH](https://art.torvergata.it/retrieve/handle/2108/33648/85364/trec2008.pdf) (henceforth “DPHF”). You can find my implementation of DPH for Lucene [here](https://github.com/felipemoraes/DPH-for-Lucene).
+- Aspect modeling: we represented each aspect **a** as an aggregate of the relevant passages associated with it, with the content of each passage **p** weighted by its corresponding relevance grade **g**. 
+- Dynamic reranker:  we took two state-of-the-art diversification models: [xQuAD](http://dl.acm.org/citation.cfm?id=1772780) and [PM2](http://dl.acm.org/citation.cfm?id=2348296). In line with the goal of dynamic search, these models attempt to satisfy as many query aspects as possible (**promoting diversity**) and as early as possible (**promoting novelty**).
 
-# Roll the die
-roll = random.randint(1, 20)
-print('You rolled a %d.' % roll)
-```
+We have four research questions in this paper:
 
-You can, of course, use any theme you wish, see the jekyll and pygments
-documentation for more details.
+- **Q1**. How does the initial document sample impact the effectiveness of a dynamic search system?
+- **Q2**. What is the impact of feedback modeling on the system's knowledge of the aspects underlying the user's query?
+- **Q3**. How do improved coverage estimates impact the system's ability to dynamically adapt its ranking strategy?
+- **Q4**. What is the impact of early and late stopping strategies on the attained gain-effort trade-off?
 
-License
-=======
+In the remainder of this post, I willl summarise our findings for each of the first three questions in turn. Our observations are based on [ACT](http://dl.acm.org/citation.cfm?id=2523648) figures averaged across 171 queries from all five domains of the TREC 2015-2016 Dynamic Domain.
 
-The content of this theme is distributed and licensed under a
-![License Badge]({{ site.baseurl}}/images/cc_by_88x31.png)
-[Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
+### Q1. Baseline ranker
 
-    This license lets others distribute, remix, tweak, and build upon your work,
-    even commercially, as long as they credit you for the original creation. This
-    is the most accommodating of licenses offered. Recommended for maximum
-    dissemination and use of licensed materials.
+ The baseline ranker component may impact the efectiveness of a dynamic search system in different moments. In particular, to address **Q1**, we investigated two complementary hypotheses:
 
-In other words: you can do anything you want with this theme on any site, just please
-provide a link to [the original theme on github](https://github.com/scotte/jekyll-clean)
-so I get credit for the original design. Beyond that, have at it!
+> **H1**. At earlier interactions, the effectiveness of the system is influenced by the precision attained by the baseline ranker.
 
-This theme includes the following files which are the properties of their
-respective owners:
+> **H2**. At later interactions, the effectiveness of the system is influenced by the recall attained by the baseline ranker.
 
-* js/bootstrap.min.js - [bootstrap](http://getbootstrap.com)
-* css/bootstrap.min.css - [bootstrap](http://getbootstrap.com)
-* js/jquery.min.js - [jquery](https://jquery.com)
-* images/cc_by_88x31.png - [creative commons](https://creativecommons.org)
-* css/colorful.css - [iwootten/jekyll-syntax](https://github.com/iwootten/jekyll-syntax)
+
+### Q2. Aspect Modeling
+
+To address **Q2**, we analyzed the contribution of an accurate modeling of the multiple aspects **A** underlying the user’s need based upon the feedback **F** provided by the user at each time **t**. We propose the following hypothesis:
+
+> **H3**. The effectiveness of a dynamic search system can be hindered by an inaccurate or incomplete aspect modeling.
+
+We performed two different simulations, one mishandling feedback on individual passages, and other mishandling aspects. The figures below show the impact on dynamic search effectiveness in terms of ACT@10 for DPHF, DPHF+xQuAD, and DPHF+PM2 as we increase the probability of perturbing the underlying aspect model:
+
+
+:-------------------------:|:-------------------------:
+![Inaccurate aspect modeling ]({{site.baseurl}}/img/aspect_removal_DPH.png)  |  ![Incomplete aspect modeling]({{site.baseurl}}/img/miss_feedback_DPH.png) 
+Inaccurate aspect modeling            |  Incomplete aspect modeling
+
+
+From the figures, we note that, as we increase either the probability of mishandling feedback on individual passages or the fraction of mishandled aspects, dynamic search effectiveness is hindered, which answers **Q2** by providing supporting evidence for **H3**. On the other hand, these results demonstrate a reasonable resilience of both xQuAD and PM2 to inaccurate or incomplete aspect models.
+
+### Q3. Dynamic Reranker
+
+To address **Q3**, we proposed the following hypothesis:
+
+> **H4**. The effectiveness of a dynamic search system can be enhanced by improved document coverage estimates for a given aspect model, more so for narrower queries.
+
+proposed the above hypothesis because coverage estimates are key in a dynamic search scenario, particularly for narrower queries, which have a smaller number of relevant aspects and hence are arguably harder to diversify. To test this hypothesis, we simulate increasingly inaccurate coverage estimates, by gradually adding noise to the perfect estimates given by the ground truth data. 
+
+In the figure below, we first note that DHF+xQuAD and DPHF+PM2 increasingly outperform the DPHF baseline ranker as their underlying coverage estimates improve, in support of **H4**. In particular, xQuAD begins to outperform DPHF at a critical leakage (CL) point of **0.3**, measured in terms of aspect nDCG. On the other hand, PM2 requires slightly improved coverage estimates at a CL point of **0.4**.
+
+
+:-------------------------:|
+![Impact of perturbed coverage estimates.]({{site.baseurl}}/img/pertubation_DPH.png)  |  
+Impact of perturbed coverage estimates.            |  
+
+
+### Take-home messages:
+
+Briefly, we described several properties that dynamic search systems must cope with:
+
+- A high-precision baseline ranker may improve dynamic search at early interactions, whereas a high-recall baseline ranker tends to favor later interactions. 
+- Mishandling the user’s feedback on individual passages associated with an aspect or on entire aspects may lead to decreased effectiveness. 
+- There is a need for accurately estimating the coverage of each retrieved document with respect to each query aspect, particularly for queries with fewer aspects, which seem inherently harder to improve. 
+- Early stopping strategies achieve a better gain-effort trade-off compared to late stopping strategies, which highlights the challenge of promoting effective exploration in this task.
+
+For more details about the results and analysis, stay tuned for our pre-print, or check out an extended version of the paper in my [Master's thesis](https://www.dcc.ufmg.br/pos/cursos/defesas/2069M.PDF). Or better, see you in Amsterdam in my presentation! Dank u wel en tot ziens!
