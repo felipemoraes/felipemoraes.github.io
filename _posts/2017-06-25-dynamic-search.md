@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Effectiveness of Dynamic Search Systems"
-date: 2014-08-22 16:25:06 -0700
+date: 2017-06-25 22:00:00 -0700
 comments: false
 ---
 
