@@ -97,7 +97,7 @@ In the figure below, we first note that DHF+xQuAD and DPHF+PM2 increasingly outp
 
 
 :-------------------------:|
-![Impact of perturbed coverage estimates.](images/pertubation_DPH.png)  |  
+![Impact of perturbed coverage estimates.]({{ site.baseurl}}/img/pertubation_DPH.png)  |  
 Impact of perturbed coverage estimates.            |  
 
 
