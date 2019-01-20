@@ -37,7 +37,7 @@ After our participation, we noticed that even the reportedly most effective syst
 
 Ebola domain            |  Polar domain
 :-------------------------:|:-------------------------:
-![Ebola 2016]({{site.baseurl}}/img/TREC_Best_ebola16.png)  |  ![Polar]({{site.baseurl}}/img/TREC_Best_polar.png) 
+![Ebola 2016](img/TREC_Best_ebola16.png)  |  ![Polar](img/TREC_Best_polar.png) 
 
 Then, our objective turned to understanding the challenges involved in building effective dynamic search systems. To this end, we isolated each of the aforementioned problems as a separate component of a dynamic search system as shown in the figure below:
 
