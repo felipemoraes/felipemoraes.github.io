@@ -34,13 +34,13 @@ This class exposes the functionalities of Indri's _QueryEnvironment_ and _RMExpa
 ![searchx.png]({{site.baseurl}}/img/searchx.png)
 
 
-
 Another class we implemented was _Reader_ to enable the rendering of a document’s content when a user has clicked on it, and _Scorer_ to enable our backend to have direct access to documents’ scores for reranking purposes. 
 
 All of these aforementioned classes was used in our user study (more than 300 crowdworkers recruited) published as an Information Retrieval journal [article](https://link.springer.com/article/10.1007/s10791-018-09350-9). 
 
 In our paper we also presented an efficiency analysis of node-indri, comparing it to Indri and Pyndri. We indexed two standard test corpora—Aquaint and ClueWeb12B—with Indri and measured the execution time for 10k queries of the TREC 2007 Million Query track across the three toolkits. Table below presents the overall query execution time of the three toolkits. 
 
+<p></p>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -69,7 +69,7 @@ In our paper we also presented an efficiency analysis of node-indri, comparing i
     <td class="tg-0pky">2058s (338s)</td>
   </tr>
 </table>
-
+<p></p>
 
 As you can see from the table, node-indri can  be  efficiently  used  in  modern  web  backend  development with comparable efficiency to Indri and Pyndri. 
 
