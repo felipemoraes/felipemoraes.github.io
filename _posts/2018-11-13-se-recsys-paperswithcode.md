@@ -1,5 +1,8 @@
 ---
-published: false
+layout: post
+title: "Search and Recommender Systems Papers with Code"
+date: 2018-11-13 12:25:06 -0700
+published: true
 ---
 
 Hey there! Inspired by the https://paperswithcode.com/[Papers with Code](https://paperswithcode.com/ "Papers with Code") effort, I created a small instance of this for search and recommender systems research papers that I found the code available on Github: https://felipemoraes.github.io/se-recsys-paperswithcode/.
