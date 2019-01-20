@@ -29,7 +29,10 @@ SearchX's backend supports the inclusion of many IR backends such as Elasticsear
 _Searcher_ class to provide search results (with or without snippets) in a pagination
 manner leveraging feedback documents. 
 
-This class exposes the functionalities of Indri's _QueryEnvironment_ and _RMExpander_ classes through the method search which returns a list of search results in a paginated manner. When a Searcher object is instantiated, it takes a configuration object as argument. When a call to search() is made and no feedback documents are provided as argument, the standard query likelihood model is employed, otherwise the [relevance feedback expander RM3](https://dl.acm.org/citation.cfm?id=383972) is. Depending on the configuration settings, the returned result list may contain document snippets (as provided by Indri's _SnippetBuilder_), document scores, document text and other metadata. An example of this can be found in the image below (notice bold terms on the snippets showing expanded terms for the X query).
+This class exposes the functionalities of Indri's _QueryEnvironment_ and _RMExpander_ classes through the method search which returns a list of search results in a paginated manner. When a Searcher object is instantiated, it takes a configuration object as argument. When a call to search() is made and no feedback documents are provided as argument, the standard query likelihood model is employed, otherwise the [relevance feedback expander RM3](https://dl.acm.org/citation.cfm?id=383972) is. Depending on the configuration settings, the returned result list may contain document snippets (as provided by Indri's _SnippetBuilder_), document scores, document text and other metadata. An example of this can be found in the image below (notice the bold terms on the snippets showing expanded terms for the X query).
+
+![searchx.png]({{site.baseurl}}/img/searchx.png)
+
 
 
 Another class we implemented was _Reader_ to enable the rendering of a document’s content when a user has clicked on it, and _Scorer_ to enable our backend to have direct access to documents’ scores for reranking purposes. 
@@ -38,12 +41,34 @@ All of these aforementioned classes was used in our user study (more than 300 cr
 
 In our paper we also presented an efficiency analysis of node-indri, comparing it to Indri and Pyndri. We indexed two standard test corpora—Aquaint and ClueWeb12B—with Indri and measured the execution time for 10k queries of the TREC 2007 Million Query track across the three toolkits. Table below presents the overall query execution time of the three toolkits. 
 
-|            | Aquaint     | ClueWeb12B   |
-| --------------- | ---------------- | ----------------- |
-| Indri      | 29s (0.30s) | 1645s ( 20s) |
-| Pyndri     | 25s (1.22s) | 2262s (340s) |
-| node-indri | 25s (0.58s) | 2058s (338s) |
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">Aquaint</th>
+    <th class="tg-0pky">ClueWeb12B</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Indri</td>
+    <td class="tg-0pky">29s (0.30s)</td>
+    <td class="tg-0pky">1645s ( 20s)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Pyndri</td>
+    <td class="tg-0pky">25s (1.22s)</td>
+    <td class="tg-0pky">2262s (340s)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">node-indri</td>
+    <td class="tg-0pky">25s (0.58s)</td>
+    <td class="tg-0pky">2058s (338s)</td>
+  </tr>
+</table>
 
 
 As you can see from the table, node-indri can  be  efficiently  used  in  modern  web  backend  development with comparable efficiency to Indri and Pyndri. 
