@@ -11,5 +11,4 @@ In my humble version, I collected a few papers that I encountered during my rese
 
 A plus is that I finally released the code I programmed during my master [here](https://github.com/felipemoraes/dynamic).
 
-
 I encourage pull requests or issues (with yours or from others papers with code) to make this small effort huge!
