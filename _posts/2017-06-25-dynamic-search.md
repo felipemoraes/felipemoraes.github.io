@@ -37,8 +37,9 @@ In the beginning of my Master's, we tackled this problem as a participant group 
 After our participation, we noticed that even the reportedly most effective system in each of the five domains of interest have shown only marginal improvements compared to vanilla ad-hoc search baselines, which leverage no user feedback, as shown in the plots below:
 
 Ebola domain            |  Polar domain
-:-------------------------:|:-------------------------:
-![Ebola 2016]({{ site.baseurl}}/img/TREC_Best_ebola16.png)  |  ![Polar]({{ site.baseurl}}/img/TREC_Best_polar.png) 
+
+<img href="{{ site.baseurl}}/img/TREC_Best_ebola16.png" width="100"/> 
+<img src="{{ site.baseurl}}/img/TREC_Best_polar.png" width="100" />
 
 Then, our objective turned to understanding the challenges involved in building effective dynamic search systems. To this end, we isolated each of the aforementioned problems as a separate component of a dynamic search system as shown in the figure below:
 
@@ -79,7 +80,8 @@ To address **Q2**, we analyzed the contribution of an accurate modeling of the m
 
 We performed two different simulations, one mishandling feedback on individual passages, and other mishandling aspects. The figures below show the impact on dynamic search effectiveness in terms of ACT@10 for DPHF, DPHF+xQuAD, and DPHF+PM2 as we increase the probability of perturbing the underlying aspect model:
 
-<img href="{{ site.baseurl}}/img/aspect_removal_DPH.png" width="100"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png" width="100" />
+<img href="{{ site.baseurl}}/img/aspect_removal_DPH.png" width="100"/> 
+<img src="{{ site.baseurl}}/img/miss_feedback_DPH.png" width="100" />
 Inaccurate aspect modeling            |  Incomplete aspect modeling
 
 
