@@ -37,13 +37,13 @@ After our participation, we noticed that even the reportedly most effective syst
 
 Ebola domain            |  Polar domain
 :-------------------------:|:-------------------------:
-![Ebola 2016](images/TREC_Best_ebola16.png)  |  ![Polar](images/TREC_Best_polar.png) 
+![Ebola 2016]({{ site.baseurl}}/img/TREC_Best_ebola16.png)  |  ![Polar]({{ site.baseurl}}/img/TREC_Best_polar.png) 
 
 Then, our objective turned to understanding the challenges involved in building effective dynamic search systems. To this end, we isolated each of the aforementioned problems as a separate component of a dynamic search system as shown in the figure below:
 
 
 :-------------------------:|
-![Flow diagram of a typical dynamic search system ](images/ds_framework.png)  |  
+![Flow diagram of a typical dynamic search system ]({{ site.baseurl}}/img/ds_framework.png)  |  
 Flow diagram of a typical dynamic search system            |  
 
 To study the impact of each of these components, we experimented with the following instantiations:
@@ -80,7 +80,7 @@ We performed two different simulations, one mishandling feedback on individual p
 
 
 :-------------------------:|:-------------------------:
-![Inaccurate aspect modeling ](images/aspect_removal_DPH.png)  |  ![Incomplete aspect modeling](images/miss_feedback_DPH.png) 
+![Inaccurate aspect modeling ]({{ site.baseurl}}/img/aspect_removal_DPH.png)  |  ![Incomplete aspect modeling]({{ site.baseurl}}/img/miss_feedback_DPH.png) 
 Inaccurate aspect modeling            |  Incomplete aspect modeling
 
 
