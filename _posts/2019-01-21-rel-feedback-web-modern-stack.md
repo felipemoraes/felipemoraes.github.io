@@ -39,13 +39,13 @@ All of these aforementioned classes was used in our user study (more than 300 cr
 In our paper we also presented an efficiency analysis of node-indri, comparing it to Indri and Pyndri. We indexed two standard test corpora—Aquaint and ClueWeb12B—with Indri and measured the execution time for 10k queries of the TREC 2007 Million Query track across the three toolkits. Table below presents the overall query execution time of the three toolkits. 
 
 |            | Aquaint     | ClueWeb12B   |
-|------------|-------------|--------------|
+| --------------- | ---------------- | ----------------- |
 | Indri      | 29s (0.30s) | 1645s ( 20s) |
 | Pyndri     | 25s (1.22s) | 2262s (340s) |
 | node-indri | 25s (0.58s) | 2058s (338s) |
 
+
+
 As you can see from the table, node-indri can  be  efficiently  used  in  modern  web  backend  development with comparable efficiency to Indri and Pyndri. 
 
 The node-indri repository is open-sourced at [https://github.com/felipemoraes/node-indri](https://github.com/felipemoraes/node-indri).
-
-
