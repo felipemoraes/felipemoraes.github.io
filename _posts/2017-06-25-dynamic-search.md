@@ -80,8 +80,8 @@ To address **Q2**, we analyzed the contribution of an accurate modeling of the m
 We performed two different simulations, one mishandling feedback on individual passages, and other mishandling aspects. The figures below show the impact on dynamic search effectiveness in terms of ACT@10 for DPHF, DPHF+xQuAD, and DPHF+PM2 as we increase the probability of perturbing the underlying aspect model:
 
 
-:-------------------------:|:-------------------------:
-<p><img href="{{ site.baseurl}}/img/aspect_removal_DPH.png" width="200"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png" width="200" /> </p>
+
+<p><img href="{{ site.baseurl}}/img/aspect_removal_DPH.png" width="100"/> <img src="{{ site.baseurl}}/img/miss_feedback_DPH.png" width="100" /> </p>
 Inaccurate aspect modeling            |  Incomplete aspect modeling
 
 
